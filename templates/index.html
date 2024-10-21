@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWEGBFVXY7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VWEGBFVXY7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-2953817223541193">
+    <title>TaxGear</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.jpeg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link href="/static/static-main.css" rel="stylesheet" type="text/css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123456789-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-123456789-1');
+    </script>
+</head>
+
+<body>
+   <a href="https://www.taxgear.gr/">
+    <img src="/static/logo.png" alt="a nice logo" class="logo"/>
+</a>
+    <div class="off-screen-menu">
+        <div class="aboutus-button">
+            <button onclick="location.href='aboutus'">Ποιοι είμαστε</button>
+            <a href="https://www.paypal.com/paypalme/TaxGear24"><button>Στηρίξτε μας</button></a>
+          </div>
+    </div>
+    <nav>   
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="container-header">
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+              <!-- <div class="ad-banner">Left Ad Banner</div> -->
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Υπολογισμός Φόρων </h1>
+                <h4 class="Description"class="text-center mb-4">Βρείτε τους φόρους του οχήματός σας με βάση την χρονολογία, τα κυβικά και τις εκπομπές Co2. Με ευκολία, ταχύτητα και αξιοπιστία.</h4>
+                <form action="https://fastapifiverr.vercel.app/calculate/" method="post" id="taxForm">
+                    <div class="mb-3">
+                        <label for="type_cars" class="form-label">Είδος Οχήματος:</label>
+                        <select class="form-select" name="type_cars" id="type_cars" required>
+                            <option value="Εσωτερικής καύσης">Εσωτερικής καύσης</option>
+                            <option value="Υβριδικό">Υβριδικό</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Χρονολογία Οχήματος :</label>
+                        <input type="number" class="form-control" name="year" id="year" placeholder="1900" min="1900"
+                            max="{{ current_year }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cubic_capacity" class="form-label">Κυβικά Οχήματος:</label>
+                        <input type="number" class="form-control" name="cubic_capacity" placeholder="500"
+                            id="cubic_capacity" min="500" max="9000" required>
+                    </div>
+                    <div class="mb-3" id="co2_emission_container">
+                        <label for="co2_emission" class="form-label">Εκπομπές CO2:</label>
+                        <input type="number" class="form-control" name="co2_emission" id="co2_emission" placeholder="0"
+                            min="0" max="700">
+                        <p class="co2-tip">Tip: Αν δεν γνωρίζετε τις εκμπομπές Co2 του οχήματος σας, μπορείτε να τις
+                            βρείτε στο Google. Γράφοντας: π.χ. Suzuki Vitara 2019 Co2 emissions.</p>
+                    </div>
+                     <button id="submit-button" class ="btn btn-primary" align-self:center; type="submit">Submit</button>
+                </form>
+                
+                <div id="results-container">
+                    <h2 class="text-center mb-4">Αποτελέσματα</h2>
+                    <div id="results"></div>
+                </div>
+            </div>
+        <div class="container mt-5">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mobile-spacing">
+                    <img src="/static/target.png" alt="Ακρίβεια" class="mb-2" />
+                    <p>✅Ακρίβεια</p>
+                </div>
+                <div class="col-md-3 mb-4 mobile-spacing">
+                    <img src="/static/checkmark.png" alt="Ευκολία Χρήσης" class="mb-2" />
+                    <p>💻Ευκολία Χρήσης</p>
+                </div>
+                <div class="col-md-3 mb-4 mobile-spacing">
+                    <img src="/static/speed.png" alt="Ταχύτητα" class="mb-2" />
+                    <p>⚡Ταχύτητα</p>
+                </div>
+                <div class="col-md-3 mb-4 mobile-spacing">
+                    <img src="/static/arrow.png" alt="Προσαρμογή για Κάθε Όχημα" class="mb-2" />
+                    <p>🚗Προσαρμογή για Κάθε Όχημα</p>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-3">
+               <!-- <div class="ad-banner">Right Ad Banner</div> -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; {{current_year}} TaxGear.gr. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('year').addEventListener('change', function () {
+            var year = parseInt(this.value);
+            var co2EmissionContainer = document.getElementById('co2_emission_container');
+            var co2EmissionInput = document.getElementById('co2_emission');
+            if (year < 2011) {
+                co2EmissionContainer.style.display = 'none';
+                co2EmissionInput.removeAttribute('required');
+            } else {
+                co2EmissionContainer.style.display = 'block';
+                co2EmissionInput.setAttribute('required', 'required');
+            }
+        });
+
+        // Function to show results after form submission
+        function showResults(results) {
+            var resultsContainer = document.getElementById('results-container');
+            var resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            // Append each result to the results div
+            for (var key in results) {
+                if (results.hasOwnProperty(key)) {
+                    var result = results[key];
+                    resultsDiv.innerHTML += '<p><strong>' + key + ':</strong> ' + result + '</p>';
+                }
+            }
+
+            // Show the results container
+            resultsContainer.style.display = 'block';
+        }
+
+        // Handling form submission and displaying results
+        document.getElementById('taxForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Fetch form data
+            var formData = new FormData();
+
+            // Get the input values
+            var typeCars = document.getElementById('type_cars').value;
+            var year = document.getElementById('year').value;
+            var cubicCapacity = document.getElementById('cubic_capacity').value;
+            var co2Emission = document.getElementById('co2_emission').value || '0';  // Default to '0' if empty
+
+            // Append the values to FormData object
+            formData.append('type_cars', typeCars);
+            formData.append('year', year);
+            formData.append('cubic_capacity', cubicCapacity);
+
+            // Conditionally append CO2 emissions only if the field is visible, default to '0' otherwise
+            var co2EmissionContainer = document.getElementById('co2_emission_container');
+            if (co2EmissionContainer.style.display === 'none') {
+                formData.append('co2_emission', '0'); // If hidden, default to 0
+            } else {
+                formData.append('co2_emission', co2Emission);
+            }
+
+            // Make a POST request to the server
+            fetch('https://www.taxgear.gr/calculate/', {
+                method: 'POST',
+                mode: 'cors',
+                credentials: 'include',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the results
+                    showResults(data);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        const hamMenu = document.querySelector(".ham-menu");
+
+        const offScreenMenu = document.querySelector(".off-screen-menu");
+
+        hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        offScreenMenu.classList.toggle("active");
+        });
+
+        //Function gia na kanei scroll down sta apotelesmata
+        document.getElementById("taxForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const results = document.getElementById("results-container");
+        results.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+    </script>
+</body>
+
+</html>
