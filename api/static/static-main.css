@@ -1,0 +1,211 @@
+body {
+    background-color: #f0f8ff;
+    background-image: linear-gradient(to right, #add8e6, #87cefa, #87cefa, #add8e6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: sans-serif;
+    color: #111;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+footer {
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f8ff;
+    background-image: linear-gradient(to right, #add8e6, #87cefa, #87cefa, #add8e6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+    padding: 500px 0;
+    text-align: center;
+}
+
+#results-container {
+    display: none;
+    margin-top: 30px;
+    margin-bottom: 130px;
+}
+
+.logo {
+    width: 200px;
+    position: fixed; /* Keep this for larger screens */
+    top: -50px;
+    left: 90px; /* Original positioning */
+}
+
+
+@media (max-width: 768px) {
+.logo {
+    position: relative; /* Change position to relative for centering */
+    margin: 0 auto;    /* Center the logo horizontally */
+    left: 0;           /* Reset left property */
+    top: 0;            /* Adjust top if needed */
+    display: block;
+    margin-bottom: -50%;    /* Ensure the logo behaves like a block element */
+         }
+}
+
+
+#taxForm {
+    margin-bottom: 0px;
+}
+
+.main-container {
+    margin-top: -50px;
+    
+}
+
+.co2-tip {
+    font-size: .9rem;
+    color: #222;
+    margin-top: 5px;
+}
+
+.container-header {
+    padding-top: 150px;
+    position: center;
+    display: flex;                
+    justify-content: center;      
+    align-items: center;          
+}
+
+.results-container {
+    margin-top: 50px;
+}
+
+.btn {
+    background-color: black;
+    width: 100%;
+    align-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position :relative;
+    
+}
+.btn:active,
+.btn:focus {
+    background-color: black; /* Change this to black on click */
+    color: black;
+ }
+.btn:hover {
+    background-color: white;
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .mobile-spacing {
+     margin-bottom: 10%; /* Adjust this value to increase space between elements */
+     padding-bottom: 10%;              }
+}
+
+.off-screen-menu {
+    margin-top: -80px;
+    width: 100%;
+    max-width: 500px;
+    position: fixed;
+    top: 100px;
+    right: -500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    transition: .3s ease;
+    text-decoration: underline;
+       
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+}
+
+.ham-menu {
+    top: 15px;
+    left: 95%;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: fixed;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 75%;
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+ top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 75%;
+}
+
+.aboutus-button button {
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-right: 2px;
+    font-size: 22px;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: flex;
+}
+
+.aboutus-button button:hover {
+    background-color: white;
+    color:black;
+}
+
+@media (max-width: 768px) { /* Adjust the width as per your mobile breakpoint */
+    .ham-menu {
+       left:auto; /* Reset the right position */
+       right: 5%;
+       margin-left: auto;
+    }} 
